@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortaleza Interior — Devocional de 30 dias | Pietra Gratia</title>
+<meta name="description" content="30 dias para dominar a mente, fortalecer o espírito e viver como o homem de Deus. Este não é um devocional para homens fracos.">
+<style>
+  :root{
+    --preto:#0b0b0c;
+    --grafite:#141517;
+    --grafite-2:#1c1e21;
+    --ouro:#c9a24b;
+    --ouro-claro:#e2c179;
+    --creme:#f3ede1;
+    --cinza:#a8a296;
+    --cinza-2:#77726a;
+    --verde:#2f7d5d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--preto);
+    color:var(--creme);
+    font-family:'Segoe UI',-apple-system,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .serif{font-family:Georgia,'Times New Roman',serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px;}
+  .narrow{max-width:720px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- BOTÃO ---------- */
+  .btn{
+    display:inline-block;text-decoration:none;text-align:center;
+    background:linear-gradient(180deg,var(--ouro-claro),var(--ouro));
+    color:#141414;font-weight:800;font-size:17px;letter-spacing:.4px;
+    padding:19px 40px;border-radius:5px;border:none;cursor:pointer;
+    box-shadow:0 10px 34px -10px rgba(201,162,75,.65);
+    transition:transform .15s ease, box-shadow .15s ease;
+    text-transform:uppercase;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(201,162,75,.8);}
+  .btn-sub{display:block;font-size:12.5px;color:var(--cinza);margin-top:12px;letter-spacing:.3px;font-weight:400;text-transform:none;}
+  .cta-block{text-align:center;margin:36px 0 8px;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:90px 0 70px;}
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-bg svg{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-fade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.35) 45%,rgba(11,11,12,.92) 88%,var(--preto) 100%);}
+  .hero-in{position:relative;z-index:2;width:100%;}
+  .kicker{
+    display:inline-block;font-size:11.5px;letter-spacing:3.5px;text-transform:uppercase;
+    color:var(--ouro);font-weight:700;border:1px solid rgba(201,162,75,.4);
+    padding:7px 16px;border-radius:40px;margin-bottom:26px;
+    background:rgba(201,162,75,.07);
+  }
+  h1{font-size:clamp(35px,6.4vw,62px);line-height:1.08;font-weight:400;letter-spacing:-.5px;margin-bottom:24px;color:#fff;}
+  h1 .g{color:var(--ouro-claro);font-style:italic;}
+  .hero p.lead{font-size:clamp(16px,2.2vw,20px);color:#d8d2c6;max-width:620px;margin-bottom:16px;}
+  .hero p.lead b{color:#fff;font-weight:700;}
+  .hero .micro{font-size:13.5px;color:var(--cinza-2);margin-top:18px;}
+
+  /* ---------- SEÇÕES ---------- */
+  section.s{padding:82px 0;position:relative;}
+  section.dark{background:var(--grafite);}
+  section.darker{background:var(--preto);}
+  section.gold{background:linear-gradient(160deg,#1a1508,#241d0c);}
+  h2{font-size:clamp(27px,4.2vw,43px);line-height:1.18;font-weight:400;color:#fff;margin-bottom:22px;letter-spacing:-.3px;}
+  h2 .g{color:var(--ouro-claro);font-style:italic;}
+  h3{font-size:clamp(20px,2.8vw,26px);color:#fff;font-weight:400;margin-bottom:14px;}
+  p{font-size:16.5px;color:#cfc9bd;margin-bottom:16px;}
+  p b{color:#fff;font-weight:700;}
+  .eyebrow{font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro);font-weight:700;margin-bottom:16px;}
+
+  /* espelho / dores */
+  .pain{list-style:none;margin:26px 0 8px;}
+  .pain li{
+    display:flex;gap:15px;align-items:flex-start;
+    padding:17px 20px;margin-bottom:11px;
+    background:rgba(255,255,255,.028);
+    border-left:2px solid rgba(201,162,75,.5);
+    border-radius:0 7px 7px 0;
+    font-size:16.5px;color:#d8d2c6;
+  }
+  .pain li b{color:#fff;}
+  .pain li .x{color:var(--ouro);font-size:15px;flex:none;margin-top:2px;}
+
+  /* citação forte */
+  .quote{
+    border-left:3px solid var(--ouro);padding:6px 0 6px 26px;margin:32px 0;
+  }
+  .quote .big{font-size:clamp(23px,3.6vw,34px);line-height:1.3;color:#fff;font-weight:400;}
+  .quote .src{font-size:13px;color:var(--cinza-2);margin-top:12px;font-style:italic;}
+
+  /* estrutura do dia */
+  .steps{display:grid;gap:13px;margin-top:30px;}
+  .step{
+    display:flex;gap:17px;align-items:flex-start;
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+    border-radius:11px;padding:20px 22px;
+  }
+  .step .ic{
+    flex:none;width:42px;height:42px;border-radius:9px;
+    background:rgba(201,162,75,.13);border:1px solid rgba(201,162,75,.3);
+    display:flex;align-items:center;justify-content:center;font-size:19px;
+  }
+  .step h4{font-size:17px;color:var(--ouro-claro);font-weight:700;margin-bottom:4px;}
+  .step p{font-size:15px;color:#bdb7ab;margin:0;}
+
+  /* 30 temas */
+  .temas{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:9px;margin-top:28px;}
+  .tema{
+    display:flex;gap:11px;align-items:baseline;
+    font-size:14.5px;color:#cfc9bd;padding:9px 12px;
+    background:rgba(255,255,255,.025);border-radius:6px;
+  }
+  .tema .n{color:var(--ouro);font-weight:800;font-size:12px;flex:none;font-family:Georgia,serif;min-width:22px;}
+
+  /* bônus */
+  .bonus-card{
+    border:1px solid rgba(201,162,75,.45);
+    background:linear-gradient(150deg,rgba(201,162,75,.11),rgba(201,162,75,.03));
+    border-radius:14px;padding:36px 32px;text-align:center;
+  }
+  .bonus-tag{
+    display:inline-block;background:var(--ouro);color:#141414;font-weight:800;
+    font-size:11.5px;letter-spacing:2px;padding:6px 15px;border-radius:30px;margin-bottom:20px;
+  }
+
+  /* fundamentação */
+  .fontes{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px;justify-content:center;}
+  .fonte{
+    font-size:13.5px;color:#d8d2c6;background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);border-radius:30px;padding:8px 17px;
+  }
+
+  /* para quem */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;}
+  .col{border-radius:12px;padding:28px 26px;}
+  .col.yes{background:rgba(47,125,93,.09);border:1px solid rgba(47,125,93,.35);}
+  .col.no{background:rgba(150,60,60,.07);border:1px solid rgba(150,60,60,.3);}
+  .col h4{font-size:16px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;font-weight:800;}
+  .col.yes h4{color:#5fc79a;} .col.no h4{color:#d98080;}
+  .col ul{list-style:none;}
+  .col li{font-size:15.5px;color:#cfc9bd;padding-left:22px;position:relative;margin-bottom:11px;line-height:1.55;}
+  .col.yes li::before{content:"✓";position:absolute;left:0;color:#5fc79a;font-weight:800;}
+  .col.no li::before{content:"✕";position:absolute;left:0;color:#d98080;font-weight:800;}
+
+  /* autora */
+  .autora{display:flex;gap:32px;align-items:center;}
+  .autora .foto{
+    flex:none;width:170px;height:170px;border-radius:50%;
+    background:rgba(255,255,255,.05);border:2px solid rgba(201,162,75,.4);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:12px;color:var(--cinza-2);padding:16px;
+  }
+
+  /* depoimentos */
+  .depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px;}
+  .depo{
+    background:rgba(255,255,255,.032);border:1px solid rgba(255,255,255,.08);
+    border-radius:11px;padding:24px;
+  }
+  .depo .stars{color:var(--ouro);font-size:14px;margin-bottom:12px;letter-spacing:2px;}
+  .depo p{font-size:15px;font-style:italic;color:#cfc9bd;margin-bottom:14px;}
+  .depo .who{font-size:13.5px;color:var(--cinza-2);font-weight:700;}
+
+  /* oferta */
+  .oferta{
+    border:1px solid rgba(201,162,75,.4);border-radius:16px;overflow:hidden;
+    background:linear-gradient(170deg,#191713,#0f0e0c);
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.9);
+  }
+  .oferta-top{padding:34px 32px;border-bottom:1px dashed rgba(201,162,75,.28);}
+  .inclui{list-style:none;}
+  .inclui li{font-size:16.5px;color:#e2ddd2;padding:11px 0 11px 32px;position:relative;}
+  .inclui li::before{content:"✓";position:absolute;left:0;top:11px;color:var(--ouro);font-weight:800;font-size:17px;}
+  .inclui li b{color:#fff;}
+  .inclui li .tagb{background:var(--ouro);color:#141414;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;margin-left:7px;letter-spacing:1px;vertical-align:middle;}
+  .oferta-bot{padding:34px 32px;text-align:center;}
+  .de{font-size:16px;color:var(--cinza-2);text-decoration:line-through;}
+  .por{font-size:clamp(42px,7vw,62px);color:#fff;font-weight:700;line-height:1;margin:8px 0 6px;font-family:Georgia,serif;}
+  .por small{font-size:22px;color:var(--cinza);}
+  .parcel{font-size:14.5px;color:var(--cinza);margin-bottom:8px;}
+
+  /* garantia */
+  .garantia{
+    display:flex;gap:24px;align-items:center;
+    border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:28px;
+    background:rgba(255,255,255,.025);margin-top:26px;
+  }
+  .selo{
+    flex:none;width:96px;height:96px;border-radius:50%;
+    border:2px solid var(--ouro);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:var(--ouro);
+  }
+  .selo .n{font-size:31px;font-weight:800;line-height:1;font-family:Georgia,serif;}
+  .selo .d{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
+
+  /* faq */
+  details{
+    border-bottom:1px solid rgba(255,255,255,.09);padding:20px 0;cursor:pointer;
+  }
+  summary{
+    font-size:17px;color:#fff;font-weight:600;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";color:var(--ouro);font-size:24px;font-weight:300;flex:none;transition:transform .2s;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{margin:14px 0 0;font-size:15.5px;color:#bdb7ab;}
+
+  /* final */
+  .final{
+    text-align:center;padding:100px 0;
+    background:radial-gradient(ellipse at 50% 120%,rgba(201,162,75,.16),transparent 62%),var(--preto);
+  }
+  .final h2{max-width:800px;margin:0 auto 22px;}
+
+  footer{background:var(--preto);border-top:1px solid rgba(255,255,255,.07);padding:36px 0;text-align:center;}
+  footer p{font-size:13px;color:var(--cinza-2);margin:0;}
+  footer a{color:var(--cinza);text-decoration:none;}
+
+  /* sticky mobile */
+  .sticky{
+    position:fixed;bottom:0;left:0;right:0;z-index:50;
+    background:rgba(11,11,12,.96);border-top:1px solid rgba(201,162,75,.3);
+    padding:12px 16px;display:none;backdrop-filter:blur(8px);
+  }
+  .sticky .btn{width:100%;padding:16px;font-size:15px;}
+
+  /* PLACEHOLDER marker */
+  .ph{outline:1px dashed rgba(201,162,75,.55);outline-offset:3px;}
+  .ph-note{
+    position:fixed;top:12px;right:12px;z-index:99;
+    background:rgba(201,162,75,.95);color:#141414;font-size:11px;font-weight:800;
+    padding:7px 13px;border-radius:30px;letter-spacing:.4px;
+    box-shadow:0 6px 20px -6px rgba(0,0,0,.7);
+  }
+
+  @media(max-width:760px){
+    .split{grid-template-columns:1fr;}
+    .autora{flex-direction:column;text-align:center;gap:22px;}
+    section.s{padding:62px 0;}
+    .sticky{display:block;}
+    body{padding-bottom:76px;}
+    .hero{min-height:auto;padding:70px 0 60px;}
+    .quote{padding-left:18px;}
+    .oferta-top,.oferta-bot{padding:26px 20px;}
+    .garantia{flex-direction:column;text-align:center;}
+    .ph-note{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="ph-note">⚠ Rascunho — itens tracejados = pendentes</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#14181f"/><stop offset=".45" stop-color="#2a2419"/>
+          <stop offset=".68" stop-color="#7a5a24"/><stop offset=".8" stop-color="#c98f36"/>
+          <stop offset=".9" stop-color="#3a3128"/><stop offset="1" stop-color="#0b0b0c"/>
+        </linearGradient>
+        <radialGradient id="sun" cx="50%" cy="79%" r="34%">
+          <stop offset="0" stop-color="#ffd98a" stop-opacity=".95"/>
+          <stop offset=".45" stop-color="#e0a94b" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#e0a94b" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1a1c22"/><stop offset="1" stop-color="#0b0b0c"/>
+        </linearGradient>
+        <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0f1014"/><stop offset="1" stop-color="#0b0b0c"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#sky)"/>
+      <ellipse cx="720" cy="711" rx="620" ry="330" fill="url(#sun)"/>
+      <!-- raios -->
+      <g opacity=".22" fill="#ffd98a">
+        <polygon points="720,711 560,120 610,110"/><polygon points="720,711 660,90 700,86"/>
+        <polygon points="720,711 780,86 820,92"/><polygon points="720,711 880,112 930,126"/>
+        <polygon points="720,711 380,240 415,214"/><polygon points="720,711 1060,214 1095,242"/>
+      </g>
+      <!-- nuvens -->
+      <g opacity=".5" fill="#0e1015">
+        <ellipse cx="250" cy="180" rx="330" ry="70"/><ellipse cx="1180" cy="150" rx="360" ry="66"/>
+        <ellipse cx="700" cy="96" rx="420" ry="58"/>
+      </g>
+      <!-- montanhas distantes -->
+      <path d="M0,720 L180,600 L330,690 L470,585 L640,700 L800,600 L980,700 L1140,610 L1290,700 L1440,640 L1440,900 L0,900 Z" fill="url(#m2)" opacity=".85"/>
+      <!-- montanha principal -->
+      <path d="M0,900 L0,790 L200,690 L400,795 L560,660 L720,530 L900,690 L1080,760 L1250,690 L1440,800 L1440,900 Z" fill="url(#m1)"/>
+      <!-- pico + homem -->
+      <path d="M640,900 L720,560 L800,900 Z" fill="#0b0b0c"/>
+      <g fill="#0b0b0c">
+        <ellipse cx="720" cy="596" rx="34" ry="7"/>
+        <path d="M713,596 L713,556 Q713,548 720,548 Q727,548 727,556 L727,596 Z"/>
+        <circle cx="720" cy="543" r="6.5"/>
+        <path d="M713,562 L705,584 M727,562 L735,584" stroke="#0b0b0c" stroke-width="4"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-fade"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <span class="kicker">Devocional · 30 dias · Pietra Gratia</span>
+      <h1 class="serif">Este não é um devocional<br>para <span class="g">homens fracos</span>.</h1>
+      <p class="lead"><b>30 dias</b> para dominar a mente, fortalecer o espírito e viver como o homem de Deus. Sem rodeios. Sem emoção passageira. Com uma ação concreta todos os dias.</p>
+      <div style="margin-top:34px;">
+        <a href="#oferta" class="btn">Eu aceito o desafio</a>
+        <span class="btn-sub">Acesso imediato · Leia no celular · Garantia de 7 dias</span>
+      </div>
+      <p class="micro">✦ Fundamentado na Bíblia, no Catecismo e nos santos da Igreja.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ================= O ESPELHO ================= -->
+<section class="s darker">
+  <div class="narrow">
+    <div class="eyebrow">Olhe no espelho</div>
+    <h2 class="serif">Você já sabe o que precisa fazer.<br>E mesmo assim <span class="g">não faz</span>.</h2>
+    <ul class="pain">
+      <li><span class="x">✦</span><span>Você vive no <b>piloto automático</b> e decide por impulso.</span></li>
+      <li><span class="x">✦</span><span><b>Reza hoje. Abandona amanhã.</b> Promete e não sustenta.</span></li>
+      <li><span class="x">✦</span><span>Começa bem — e não termina. <b>Acumula começos.</b></span></li>
+      <li><span class="x">✦</span><span>Repete erros que você <b>já tinha decidido abandonar</b>.</span></li>
+      <li><span class="x">✦</span><span>É uma <b>cidade sem muralhas</b>: raiva, ansiedade e desejo entram quando querem.</span></li>
+      <li><span class="x">✦</span><span>No fundo, sabe que está aceitando <b>menos do que deveria</b>.</span></li>
+    </ul>
+    <p style="margin-top:26px;">Não é falta de fé. É falta de <b>disciplina</b>. E a fé não se sustenta sem ela.</p>
+  </div>
+</section>
+
+<!-- ================= A LINHA NA AREIA ================= -->
+<section class="s dark">
+  <div class="narrow">
+    <div class="eyebrow">A linha na areia</div>
+    <div class="quote">
+      <div class="big serif">Ou você governa sua alma,<br>ou será governado por suas paixões.<br><span style="color:var(--ouro-claro);font-style:italic;">Não existe neutralidade.</span></div>
+    </div>
+    <p><b>Fortaleza Interior</b> não é leitura. É formação. É confronto. São 30 dias em que você será chamado, todos os dias, a uma <b>ação concreta</b>: dominar a mente, fortalecer o espírito e assumir a liderança da sua vida.</p>
+    <p style="color:var(--cinza);font-style:italic;">A vida não perdoa a falta de direção. O mundo não respeita homens indecisos. E a fé não se sustenta sem disciplina.</p>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="s darker">
+  <div class="narrow">
+    <div class="eyebrow">Como funciona</div>
+    <h2 class="serif">Todo dia, o mesmo combate.<br>Todo dia, uma <span class="g">vitória</span>.</h2>
+    <p>Cada um dos 30 dias tem a mesma estrutura de treino:</p>
+    <div class="steps">
+      <div class="step"><div class="ic">📖</div><div><h4>Palavra</h4><p>O versículo que sustenta o dia.</p></div></div>
+      <div class="step"><div class="ic">🧠</div><div><h4>Reflexão</h4><p>A verdade sem rodeios, direto no ponto.</p></div></div>
+      <div class="step"><div class="ic">🙏</div><div><h4>Oração</h4><p>Para rezar naquele dia, com intenção clara.</p></div></div>
+      <div class="step"><div class="ic">⚔️</div><div><h4>Ação Prática</h4><p>O que você vai <b style="color:#fff;">fazer</b> hoje. Sem negociar, sem adiar.</p></div></div>
+      <div class="step"><div class="ic">🛡️</div><div><h4>Regra do Dia</h4><p>A frase que governa suas decisões até o fim do dia.</p></div></div>
+    </div>
+    <p style="text-align:center;margin-top:30px;font-size:19px;color:#fff;" class="serif"><i>Não é para ler. É para executar.</i></p>
+  </div>
+</section>
+
+<!-- ================= 30 TEMAS ================= -->
+<section class="s dark">
+  <div class="wrap">
+    <div class="eyebrow">O conteúdo</div>
+    <h2 class="serif">Os 30 combates que você <span class="g">vai travar</span></h2>
+    <div class="temas">
+      <div class="tema"><span class="n">01</span> Vigiai e Orai</div>
+      <div class="tema"><span class="n">02</span> Sua Identidade Vem de Deus</div>
+      <div class="tema"><span class="n">03</span> Sem Disciplina, Não Existe Vida Espiritual</div>
+      <div class="tema"><span class="n">04</span> Silêncio Também é Força</div>
+      <div class="tema"><span class="n">05</span> Sua Mente Precisa Ser Governada</div>
+      <div class="tema"><span class="n">06</span> A Fé Precisa de Ação</div>
+      <div class="tema"><span class="n">07</span> Deus Não Habita na Superficialidade</div>
+      <div class="tema"><span class="n">08</span> Direção, Não Impulso</div>
+      <div class="tema"><span class="n">09</span> A Constância Vence a Intensidade</div>
+      <div class="tema"><span class="n">10</span> Comece o Dia com Deus</div>
+      <div class="tema"><span class="n">11</span> Coragem: Avance sem Medo</div>
+      <div class="tema"><span class="n">12</span> Seja Viril na Fé</div>
+      <div class="tema"><span class="n">13</span> Domínio Próprio: a Muralha</div>
+      <div class="tema"><span class="n">14</span> Sabedoria do Alto</div>
+      <div class="tema"><span class="n">15</span> Finanças com Propósito</div>
+      <div class="tema"><span class="n">16</span> A Força dos Irmãos</div>
+      <div class="tema"><span class="n">17</span> Ore sem Desistir</div>
+      <div class="tema"><span class="n">18</span> Chamado à Santidade</div>
+      <div class="tema"><span class="n">19</span> Levante o Escudo da Fé</div>
+      <div class="tema"><span class="n">20</span> Prossiga para o Alvo</div>
+      <div class="tema"><span class="n">21</span> Persevere até o Fim</div>
+      <div class="tema"><span class="n">22</span> Trabalhe como para o Senhor</div>
+      <div class="tema"><span class="n">23</span> Seja o Cabeça da Sua Casa</div>
+      <div class="tema"><span class="n">24</span> Resista ao Diabo</div>
+      <div class="tema"><span class="n">25</span> Seja Luz no Mundo</div>
+      <div class="tema"><span class="n">26</span> Viva na Graça: Confesse-se</div>
+      <div class="tema"><span class="n">27</span> Ame com Ação</div>
+      <div class="tema"><span class="n">28</span> Guarde o Coração</div>
+      <div class="tema"><span class="n">29</span> Seja Santo</div>
+      <div class="tema"><span class="n">30</span> Prossiga com Fé</div>
+    </div>
+    <p style="margin-top:26px;text-align:center;color:var(--cinza);">Mente · Disciplina · Finanças · Casamento · Trabalho · Amizades · Vícios · Santidade</p>
+  </div>
+</section>
+
+<!-- ================= BÔNUS ================= -->
+<section class="s gold">
+  <div class="narrow">
+    <div class="bonus-card">
+      <span class="bonus-tag">🎁 BÔNUS INCLUSO</span>
+      <h2 class="serif" style="margin-bottom:16px;">O Diário da <span class="g">Transformação</span></h2>
+      <p style="max-width:560px;margin:0 auto 20px;"><b>30 páginas</b> — uma para cada dia — para registrar o que Deus falou com você, as decisões que tomou, os hábitos que quebrou e as batalhas que venceu.</p>
+      <div class="quote" style="text-align:left;max-width:520px;margin:24px auto 0;border-color:var(--ouro-claro);">
+        <p style="font-size:16px;font-style:italic;margin:0;color:#e2ddd2;">“Um homem que escreve o que pensa clarifica o que decide. Um homem que registra o que Deus fez em sua vida não esquece e não recua.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUNDAMENTAÇÃO ================= -->
+<section class="s darker">
+  <div class="narrow" style="text-align:center;">
+    <div class="eyebrow">Fundamentação</div>
+    <h2 class="serif">Isto não é autoajuda<br>com <span class="g">verniz cristão</span>.</h2>
+    <p style="max-width:600px;margin:0 auto;">Cada um dos 30 dias é fundamentado na <b>Bíblia (tradução oficial da CNBB)</b> e na tradição da Igreja — com <b>fontes bibliográficas citadas todos os dias</b>.</p>
+    <div class="fontes">
+      <span class="fonte">✝ Bíblia — CNBB</span>
+      <span class="fonte">Catecismo da Igreja Católica</span>
+      <span class="fonte">Santo Agostinho</span>
+      <span class="fonte">São Josemaría Escrivá</span>
+      <span class="fonte">São João Bosco</span>
+      <span class="fonte">Santa Teresa d’Ávila</span>
+      <span class="fonte">São João da Cruz</span>
+      <span class="fonte">Santo Tomás de Aquino</span>
+      <span class="fonte">Santo Inácio de Loyola</span>
+      <span class="fonte">São João Paulo II</span>
+      <span class="fonte">Regra de São Bento</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARA QUEM ================= -->
+<section class="s dark">
+  <div class="wrap">
+    <div class="eyebrow">Antes de decidir</div>
+    <h2 class="serif">Seja honesto consigo mesmo</h2>
+    <div class="split">
+      <div class="col yes">
+        <h4>É para você se…</h4>
+        <ul>
+          <li>Você <b style="color:#fff;">decidiu</b> romper com a mediocridade</li>
+          <li>Quer disciplina e constância na fé</li>
+          <li>Quer liderar sua casa com firmeza e amor</li>
+          <li>Está cansado de começar e desistir</li>
+          <li>Quer ser confrontado com a verdade</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h4>Não é para você se…</h4>
+        <ul>
+          <li>Procura emoção passageira</li>
+          <li>Quer se sentir bem sem mudar nada</li>
+          <li>Não vai executar as ações práticas</li>
+          <li>Busca fórmula mágica sem renúncia</li>
+          <li>Acha que “já está bom assim”</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUTORA ================= -->
+<section class="s darker">
+  <div class="narrow">
+    <div class="eyebrow">Quem escreveu</div>
+    <div class="autora">
+      <div class="foto ph">FOTO DA<br>PETRONÍLIA<br><span style="font-size:10px;">(pendente)</span></div>
+      <div>
+        <h3 class="serif">Pietra Gratia</h3>
+        <p>Criadora da <b>Afinidade com Deus</b> — comunidade que reúne mais de <b>100 mil pessoas</b> em torno da fé católica todos os dias.</p>
+        <p class="ph" style="font-size:14px;color:var(--cinza-2);">[ Bio oficial pendente — a definir no briefing ]</p>
+      </div>
+    </div>
+
+    <h3 class="serif" style="margin-top:56px;">Quem já enfrentou os 30 dias</h3>
+    <div class="depos ph">
+      <div class="depo"><div class="stars">★★★★★</div><p>“[ Depoimento real de leitor — pendente ]”</p><div class="who">Nome · Cidade</div></div>
+      <div class="depo"><div class="stars">★★★★★</div><p>“[ Depoimento real de leitor — pendente ]”</p><div class="who">Nome · Cidade</div></div>
+      <div class="depo"><div class="stars">★★★★★</div><p>“[ Depoimento real de leitor — pendente ]”</p><div class="who">Nome · Cidade</div></div>
+    </div>
+    <p style="font-size:13px;color:var(--cinza-2);margin-top:14px;">⚠ Prioridade: depoimentos <b>de homens</b>, com nome e foto reais.</p>
+  </div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section class="s dark" id="oferta">
+  <div class="narrow">
+    <div class="eyebrow" style="text-align:center;">A decisão</div>
+    <h2 class="serif" style="text-align:center;margin-bottom:34px;">Comece hoje o seu <span class="g">combate</span></h2>
+
+    <div class="oferta">
+      <div class="oferta-top">
+        <ul class="inclui">
+          <li><b>Fortaleza Interior</b> — Devocional de 30 dias (PDF)</li>
+          <li><b>O Diário da Transformação</b> — 30 páginas <span class="tagb">BÔNUS</span></li>
+          <li>Acesso <b>imediato</b> após a compra</li>
+          <li>Leia no celular, tablet ou computador</li>
+          <li>É seu <b>para sempre</b></li>
+        </ul>
+      </div>
+      <div class="oferta-bot">
+        <div class="de ph">de R$ XX,XX</div>
+        <div class="por ph">R$ XX<small>,XX</small></div>
+        <div class="parcel ph">à vista no PIX ou parcelado no cartão</div>
+        <a href="#" class="btn ph" style="margin-top:14px;">Eu aceito o desafio</a>
+        <span class="btn-sub">Compra 100% segura · Acesso imediato</span>
+      </div>
+    </div>
+
+    <div class="garantia">
+      <div class="selo"><span class="n">7</span><span class="d">dias</span></div>
+      <div>
+        <h3 style="font-size:20px;margin-bottom:8px;">Garantia incondicional</h3>
+        <p style="margin:0;font-size:15.5px;">Se em 7 dias este devocional não te confrontar, devolvemos <b>100% do seu dinheiro</b>. Sem perguntas, sem burocracia. O risco é nosso — a decisão é sua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="s darker">
+  <div class="narrow">
+    <div class="eyebrow">Dúvidas</div>
+    <h2 class="serif" style="margin-bottom:12px;">Antes que você pergunte</h2>
+    <details><summary>É livro físico?</summary><p>Não. É digital (PDF). Você lê no celular, tablet ou computador — onde estiver, quando quiser.</p></details>
+    <details><summary>Como eu recebo?</summary><p>O acesso chega no seu e-mail <b>imediatamente</b> após a confirmação do pagamento. Sem espera.</p></details>
+    <details><summary>Preciso ter estudo de teologia?</summary><p>Não. A linguagem é direta e prática — mas com fundamento sério na Bíblia, no Catecismo e nos santos.</p></details>
+    <details><summary>Estou afastado da Igreja há anos. Serve para mim?</summary><p>Serve especialmente para você. Este devocional foi feito para o recomeço — e o recomeço exige decisão, não perfeição.</p></details>
+    <details><summary>Preciso fazer os 30 dias seguidos?</summary><p>O ideal é sim: a constância <b>é</b> o método. Mas o livro é seu para sempre — você pode retomar e refazer quantas vezes quiser.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o reembolso integral. Sem perguntas.</p></details>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="final">
+  <div class="narrow">
+    <h2 class="serif">A glória não pertence aos que começam.<br>Pertence aos que <span class="g">perseveram até o fim</span>.</h2>
+    <p style="max-width:520px;margin:0 auto 8px;">Você chegou até aqui porque já sabe que precisa mudar. O dia 1 começa agora.</p>
+    <div class="cta-block">
+      <a href="#oferta" class="btn">Eu aceito o desafio</a>
+      <span class="btn-sub">Acesso imediato · Garantia de 7 dias</span>
+    </div>
+    <p style="margin-top:34px;font-style:italic;color:var(--cinza-2);font-size:15px;" class="serif">“Vigiai! Permanecei firmes na fé! Sede homens! Sede fortes!”<br><span style="font-size:13px;">— 1 Coríntios 16,13</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 <b style="color:var(--cinza);">Pietra Gratia</b> · Afinidade com Deus · Todos os direitos reservados.</p>
+    <p style="margin-top:8px;"><a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a> &nbsp;·&nbsp; <a href="#">Contato</a></p>
+  </div>
+</footer>
+
+<div class="sticky"><a href="#oferta" class="btn">Eu aceito o desafio</a></div>
+
+</body>
+</html>
